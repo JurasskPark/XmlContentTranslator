@@ -63,11 +63,13 @@ Working with XML localization files is usually fragmented across editors, script
 
 Main translation workspace:
 
-![Main window](screen/001.png)
+![Main window](Source/screen_003)
 
 Auxiliary workflow window:
 
-![Additional window](screen/002.png)
+![Additional window](Source/screen_001)
+![Additional window](Source/screen_002)
+![Additional window](Source/screen_004)
 
 ### Translation Services
 
@@ -197,11 +199,13 @@ dotnet run --project .\XmlContentTranslator\XmlContentTranslator.csproj
 
 Основное окно перевода:
 
-![Основное окно](screen/001.png)
+![Основное окно](Source/screen_003)
 
 Дополнительное окно:
 
-![Дополнительное окно](screen/002.png)
+![Дополнительное окно](Source/screen_001)
+![Дополнительное окно](Source/screen_002)
+![Дополнительное окно](Source/screen_004)
 
 ### Сервисы перевода
 
