@@ -1,0 +1,105 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	  <EnableWindowsTargeting>true</EnableWindowsTargeting>
+	  <EnableDynamicLoading>true</EnableDynamicLoading>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+	  <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
+    <ApplicationIcon>Source\icon\xml_exports.ico</ApplicationIcon>
+    <UserSecretsId>3b10bb3a-5ae3-48a8-9c47-1305782e3a79</UserSecretsId>
+	  <Version>1.0.0.1</Version>
+	  <Authors>niksedk Nikolaj Olsson, JurasskPark Yuriy Pradius</Authors>
+	  <Company>Community Rapid Software</Company>
+	  <Product>XmlContentTranslator</Product>
+	  <Copyright>Copyright © 2026</Copyright>
+	  <Description>A professional tool for preparing XML files
+
+Opportunities:
+• Automatic string extraction for translation
+• Preservation of the XML document structure
+• Multi-language support
+• Integration of translated files
+	  </Description>
+    <GenerateResourceWarnOnBinaryFormatterUse>false</GenerateResourceWarnOnBinaryFormatterUse>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Xml\**" />
+    <EmbeddedResource Remove="Xml\**" />
+    <None Remove="Xml\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Source\icon\xml_exports.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Forms\FrmGenerateCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Lang\XmlContentTranslator.en-GB.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Lang\XmlContentTranslator.ru-RU.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Import Project="..\Shared\Utils.Shared\Utils.Shared.projitems" Label="Shared" />
+
+  <Import Project="..\Shared\Xml.Shared\Xml.Shared.projitems" Label="Shared" />
+
+  <Import Project="..\Shared\Project.Shared\Project.Shared.projitems" Label="Shared" />
+
+  <Import Project="..\Shared\language.Shared\language.Shared.projitems" Label="Shared" />
+
+  <Import Project="..\Shared\Debuger.Shared\Debuger.Shared.projitems" Label="Shared" />
+
+  <Import Project="..\Shared\Manager.Shared\Manager.Shared.projitems" Label="Shared" />
+
+  <Import Project="..\Shared\File.Shared\File.Shared.projitems" Label="Shared" />
+
+
+
+
+  <!-- Static analyzers configuration -->
+  <PropertyGroup>
+    <!-- Run analyzers during build and live analysis -->
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+    <!-- Enable .NET analyzers and use the latest analysis level -->
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <!-- Do not force warnings as errors in developer machines by default; CI workflow enforces it. -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);SA0001</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- StyleCop analyzers for consistent C# style -->
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

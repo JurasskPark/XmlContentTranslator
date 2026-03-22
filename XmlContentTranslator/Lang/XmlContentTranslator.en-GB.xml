@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XmlContentTranslatorDictionaries>
+	<Dictionary key="XmlContentTranslator.Forms.FrmStart">
+		<Phrase key="this">Xml Content Translator</Phrase>
+		<Phrase key="tolSettings.Text">Settings</Phrase>
+		<Phrase key="tolWindows.Text">Windows</Phrase>
+		<Phrase key="tolCascade.Text">Cascade</Phrase>
+		<Phrase key="tolHorizontal.Text">Horizontal</Phrase>
+		<Phrase key="tolVertical.Text">Vertical</Phrase>
+		<Phrase key="tolApplication.Text">Application</Phrase>
+		<Phrase key="tolApplicationOpen.Text">Open</Phrase>
+		<Phrase key="tolApplicationSave.Text">Save</Phrase>
+		<Phrase key="tolApplicationNew.Text">New</Phrase>
+		<Phrase key="tolApplicationSaveAs.Text">Save As...</Phrase>
+		<Phrase key="tolLang.Text">Language: Russian</Phrase>
+		<Phrase key="tolCloseAll.Text">Close All</Phrase>
+		<Phrase key="tolApplicationExit.Text">Exit</Phrase>
+		<Phrase key="tolAbout.Text">About</Phrase>
+		<Phrase key="tolGenerateXML.Text">Generate XML</Phrase>
+		<Phrase key="tolTranslate.Text">Translate</Phrase>
+		<Phrase key="tolGenerateCode.Text">Generate Code</Phrase>
+		<Phrase key="tolOperation.Text">Operation</Phrase>
+	</Dictionary>
+	<Dictionary key="XmlContentTranslator.Forms.FrmTranslate">
+		<Phrase key="this">FrmTranslate</Phrase>
+		<Phrase key="cmnuTranslateGoogle.Text">Translate</Phrase>
+		<Phrase key="cmnuSetValueFromMaster.Text">Transfer value from master</Phrase>
+		<Phrase key="mnuFile.Text">File</Phrase>
+		<Phrase key="mnuFileNew.Text">New</Phrase>
+		<Phrase key="mnuFileOpen.Text">Open</Phrase>
+		<Phrase key="mnuFileSave.Text">Save</Phrase>
+		<Phrase key="mnuFileSaveAs.Text">Save as...</Phrase>
+		<Phrase key="mnuEdit.Text">Edit</Phrase>
+		<Phrase key="mnuEditFind.Text">Find</Phrase>
+		<Phrase key="mnuTools.Text">Tools</Phrase>
+		<Phrase key="mnuToolsTranslateSelectedLines.Text">Translate selected lines</Phrase>
+		<Phrase key="mnuToolsTranslationService.Text">Translation service</Phrase>
+		<Phrase key="mnuToolsTranslationServiceGoogleWeb.Text">GoogleWeb</Phrase>
+		<Phrase key="mnuToolsTranslationServiceYandexWeb.Text">YandexWeb</Phrase>
+		<Phrase key="lblTo.Text">To</Phrase>
+		<Phrase key="lblFrom.Text">From</Phrase>
+		<Phrase key="btnGoToNextBlankLine.Text">Go to next blank line (F6)</Phrase>
+		<Phrase key="clmTag.Text">Tag</Phrase>
+		<Phrase key="clmSource.Text">Source</Phrase>
+		<Phrase key="clmTarget.Text">Target</Phrase>
+    </Dictionary>
+	<Dictionary key="XmlContentTranslator.Forms.FrmGenerateXML">
+		<Phrase key="this">Generate XML</Phrase>
+		<Phrase key="lblNameDriver.Text">Driver Name</Phrase>
+		<Phrase key="lblNameDictionaries.Text">Names of dictionaries</Phrase>
+		<Phrase key="mnuXMLGenerate.Text">XML Generate</Phrase>
+		<Phrase key="mnuImportFromFile.Text">Import from file...</Phrase>
+		<Phrase key="mnuImportFromFolder.Text">Import from folder...</Phrase>
+		<Phrase key="mnuSave.Text">Save</Phrase>
+		<Phrase key="mnuSaveAs.Text">Save as...</Phrase>
+	</Dictionary>
+	<Dictionary key="XmlContentTranslator.Forms.FrmGenerateCode">
+		<Phrase key="this">Generate Code</Phrase>
+		<Phrase key="mnuXMLGenerate.Text">Code Generate</Phrase>
+		<Phrase key="mnuImportFromFile.Text">Import from file...</Phrase>
+		<Phrase key="mnuImportFromFolder.Text">Import from folder...</Phrase>
+		<Phrase key="mnuSave.Text">Save</Phrase>
+		<Phrase key="mnuSaveAs.Text">Save as...</Phrase>
+	</Dictionary>
+	<Dictionary key="XmlContentTranslator.Forms.FrmSettings">
+		<Phrase key="this">Settings</Phrase>
+		<Phrase key="lblTranslateFrom.Text">From</Phrase>
+		<Phrase key="lblTranslateTo.Text">To</Phrase>
+		<Phrase key="lblTranslationService.Text">Service (active):</Phrase>
+		<Phrase key="lblTranslationServices.Text">Services:</Phrase>
+		<Phrase key="btnCancel.Text">Cancel</Phrase>
+		<Phrase key="btnSave.Text">Save</Phrase>
+	</Dictionary>
+	<Dictionary key="XmlContentTranslator.Forms.FrmFind">
+		<Phrase key="this">Find</Phrase>
+		<Phrase key="btnFind.Text">Find</Phrase>
+		<Phrase key="label1.Text">Find what</Phrase>
+		<Phrase key="rdbTags.Text">Tags</Phrase>
+		<Phrase key="gpbSearchIn.Text">Search in</Phrase>
+		<Phrase key="rdbText.Text">Text</Phrase>
+		<Phrase key="btnCancel.Text">Cancel</Phrase>
+	</Dictionary>
+	<Dictionary key="XmlContentTranslator.Forms.FrmAboutBox">
+		<Phrase key="this">About</Phrase>
+		<Phrase key="lblTitle.Text">XML Content Translator</Phrase>
+		<Phrase key="lblVersion.Text">Version</Phrase>
+		<Phrase key="lblCompany.Text">© 2026 XML Content Translator. All rights reserved.</Phrase>
+		<Phrase key="lblStatus.Text">● Ready to work</Phrase>
+		<Phrase key="btnClose.Text">Close</Phrase>
+		<Phrase key="lblLanguageIndicator.Text">EN → RU</Phrase>
+		<Phrase key="lblAuthors.Text">Authors: niksedk Nikolaj Olsson, JurasskPark Yuriy Pradius</Phrase>
+		<Phrase key="lblDescription">A professional tool for preparing XML files
+
+Opportunities:
+• Automatic string extraction for translation
+• Preservation of the XML document structure
+• Multi-language support
+• Integration of translated files
+		</Phrase>	
+	</Dictionary>
+	<Dictionary key="Application">
+		<Phrase key="ProductName">XML Content Translator 6.0.0.0</Phrase>
+		<Phrase key="Language">Language: Russian</Phrase>
+		<Phrase key="TitleXMLFiles">XML files</Phrase>
+		<Phrase key="FilterXMLFiles">XML files (*.xml)|*.xml|All files (*.*)|*.*</Phrase>
+		<Phrase key="TitleDesignerFiles">Designer files</Phrase>
+		<Phrase key="FilterDesignerFiles">Designer files (*.Designer.cs)|*.Designer.cs|All files (*.*)|*.*</Phrase>		
+	</Dictionary>
+	<Dictionary key="ListView">
+		<Phrase key="Tag">Tag</Phrase>
+		<Phrase key="Source">Source</Phrase>
+		<Phrase key="Targer">Targer</Phrase>
+	</Dictionary>
+	<Dictionary key="Combobox">
+		<Phrase key="All">All</Phrase>
+	</Dictionary>
+	<Dictionary key="DialogBox">
+		<Phrase key="DeleteRow">Are you sure you want to delete this entry?</Phrase>
+		<Phrase key="Error">Error</Phrase>
+		<Phrase key="Warning">Warning</Phrase>
+	</Dictionary>
+	<Dictionary key="Files">
+		<Phrase key="NoDataToSave">There is no data to save.</Phrase>
+		<Phrase key="FileNotFound">File not found.</Phrase>
+		<Phrase key="NamedFileNotFound">File {0} not found.</Phrase>
+		<Phrase key="DirectoryNotExists">Directory does not exist.</Phrase>
+		<Phrase key="PathNotSupported">Path not supported.</Phrase>
+		<Phrase key="InvalidFileFormat">Invalid file format.</Phrase>
+		<Phrase key="LoadConfigError">An error occurred while loading the configuration</Phrase>
+		<Phrase key="SaveConfigError">An error occurred while saving the configuration</Phrase>
+		<Phrase key="SaveConfigConfirm">The configuration has been changed. Save changes?</Phrase>
+		<Phrase key="LoadViewError">Error loading view</Phrase>
+		<Phrase key="SaveViewError">An error occurred while saving the view</Phrase>
+		<Phrase key="TranslationRequired">Translation required</Phrase>
+	</Dictionary>
+	<Dictionary key="Message">
+		<Phrase key="TranslateSelectedLines">Translate selected lines</Phrase>
+		<Phrase key="LoadedSourceFile">Loaded source file: {0}</Phrase>
+		<Phrase key="LoadedTargetFile">Loaded target file: {0}</Phrase>
+		<Phrase key="SavedTargetFile">Saved target file: {0}</Phrase>
+		<Phrase key="SavedTo">Saved to {0}</Phrase>
+		<Phrase key="Ready">Ready.</Phrase>
+		<Phrase key="SelectSourceAndTargetLanguages">Select source and target languages.</Phrase>
+		<Phrase key="TranslatingItemsViaService">Translating {0} item(s) via {1}...</Phrase>
+		<Phrase key="TranslatedItemsViaService">Translated {0} item(s) via {1}.</Phrase>
+		<Phrase key="TranslatedItems">Translated {0} item(s).</Phrase>
+		<Phrase key="TranslationFailed">Translation failed.</Phrase>
+		<Phrase key="XmlContentTranslatorFileTitle">XML Content Translator - {0}</Phrase>
+		<Phrase key="UnsavedTargetTextWillBeLost">Unsaved target text will be lost. Continue?</Phrase>
+		<Phrase key="ItemsSelected">{0} item(s) selected</Phrase>
+		<Phrase key="CopiedItemsFromSource">Copied {0} item(s) from source.</Phrase>
+		<Phrase key="OpenSourceXmlFile">Open source XML file</Phrase>
+		<Phrase key="SaveTranslatedXmlFile">Save translated XML file</Phrase>
+		<Phrase key="OnlyOneXmlFileUpToMbIsSupported">Only one XML file up to {0} MB is supported.</Phrase>
+	</Dictionary>
+</XmlContentTranslatorDictionaries>

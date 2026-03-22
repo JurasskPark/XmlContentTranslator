@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlContentTranslatorDictionaries>
+  <Dictionary key="XmlContentTranslator.Forms.FrmStart">
+    <Phrase key="this">Переводчик XML-контента</Phrase>
+    <Phrase key="tolSettings.Text">Настройки</Phrase>
+    <Phrase key="tolWindows.Text">Окна</Phrase>
+    <Phrase key="tolCascade.Text">Каскад</Phrase>
+    <Phrase key="tolHorizontal.Text">Горизонтальный</Phrase>
+    <Phrase key="tolVertical.Text">Вертикальный</Phrase>
+    <Phrase key="tolApplication.Text">Приложение</Phrase>
+    <Phrase key="tolApplicationOpen.Text">Открыть</Phrase>
+    <Phrase key="tolApplicationSave.Text">Сохранить</Phrase>
+    <Phrase key="tolApplicationNew.Text">Новый</Phrase>
+    <Phrase key="tolApplicationSaveAs.Text">Сохранить как...</Phrase>
+    <Phrase key="tolLang.Text">Язык: Английский</Phrase>
+    <Phrase key="tolCloseAll.Text">Закрыть все</Phrase>
+    <Phrase key="tolApplicationExit.Text">Выход</Phrase>
+    <Phrase key="tolAbout.Text">О программе</Phrase>
+    <Phrase key="tolGenerateXML.Text">Создать XML</Phrase>
+    <Phrase key="tolTranslate.Text">Перевести</Phrase>
+    <Phrase key="tolGenerateCode.Text">Создать код</Phrase>
+    <Phrase key="tolOperation.Text">Операция</Phrase>
+  </Dictionary>
+  <Dictionary key="XmlContentTranslator.Forms.FrmTranslate">
+    <Phrase key="this">FrmTranslate</Phrase>
+    <Phrase key="cmnuTranslateGoogle.Text">Перевести</Phrase>
+    <Phrase key="cmnuSetValueFromMaster.Text">Передача значения от мастера</Phrase>
+    <Phrase key="mnuFile.Text">Файл</Phrase>
+    <Phrase key="mnuFileNew.Text">Новый</Phrase>
+    <Phrase key="mnuFileOpen.Text">Открыть</Phrase>
+    <Phrase key="mnuFileSave.Text">Сохранять</Phrase>
+    <Phrase key="mnuFileSaveAs.Text">Сохранить как...</Phrase>
+    <Phrase key="mnuEdit.Text">Редактировать</Phrase>
+    <Phrase key="mnuEditFind.Text">Поиск</Phrase>
+    <Phrase key="mnuTools.Text">Инструменты</Phrase>
+    <Phrase key="mnuToolsTranslateSelectedLines.Text">Перевод выделенных строк</Phrase>
+    <Phrase key="mnuToolsTranslationService.Text">Сервис перевода</Phrase>
+    <Phrase key="mnuToolsTranslationServiceGoogleWeb.Text">GoogleWeb</Phrase>
+    <Phrase key="mnuToolsTranslationServiceYandexWeb.Text">YandexWeb</Phrase>
+    <Phrase key="lblTo.Text">в</Phrase>
+    <Phrase key="lblFrom.Text">Из</Phrase>
+    <Phrase key="btnGoToNextBlankLine.Text">Перейти к следующей пустой строке (F6)</Phrase>
+	<Phrase key="clmTag.Text">Тег</Phrase>
+	<Phrase key="clmSource.Text">Исходный</Phrase>
+	<Phrase key="clmTarget.Text">Целевой</Phrase>
+  </Dictionary>
+  <Dictionary key="XmlContentTranslator.Forms.FrmGenerateXML">
+    <Phrase key="this">Генерировать XML</Phrase>
+    <Phrase key="lblNameDriver.Text">Название драйвера</Phrase>
+    <Phrase key="lblNameDictionaries.Text">Названия словарей</Phrase>
+    <Phrase key="mnuXMLGenerate.Text">Генерировать XML</Phrase>
+    <Phrase key="mnuImportFromFile.Text">Импорт из файла...</Phrase>
+    <Phrase key="mnuImportFromFolder.Text">Импорт из папки...</Phrase>
+    <Phrase key="mnuSave.Text">Сохранить</Phrase>
+    <Phrase key="mnuSaveAs.Text">Сохранить как...</Phrase>
+  </Dictionary>
+  <Dictionary key="XmlContentTranslator.Forms.FrmGenerateCode">
+    <Phrase key="this">Сгенерировать код</Phrase>
+    <Phrase key="mnuXMLGenerate.Text">Генерировать код</Phrase>
+    <Phrase key="mnuImportFromFile.Text">Импорт из файла...</Phrase>
+    <Phrase key="mnuImportFromFolder.Text">Импорт из папки...</Phrase>
+    <Phrase key="mnuSave.Text">Сохранить</Phrase>
+    <Phrase key="mnuSaveAs.Text">Сохранить как...</Phrase>
+  </Dictionary>
+  <Dictionary key="XmlContentTranslator.Forms.FrmSettings">
+    <Phrase key="this">Настройки</Phrase>
+    <Phrase key="lblTranslateFrom.Text">Из</Phrase>
+    <Phrase key="lblTranslateTo.Text">В</Phrase>
+    <Phrase key="lblTranslationService.Text">Сервис (используемый):</Phrase>
+    <Phrase key="lblTranslationServices.Text">Сервисы:</Phrase>
+    <Phrase key="btnCancel.Text">Отменить</Phrase>
+    <Phrase key="btnSave.Text">Сохранить</Phrase>
+  </Dictionary>
+  <Dictionary key="XmlContentTranslator.Forms.FrmFind">
+    <Phrase key="this">Поиск</Phrase>
+    <Phrase key="btnFind.Text">Поиск</Phrase>
+    <Phrase key="lblFind.Text">Найти</Phrase>
+    <Phrase key="rdbTags.Text">Теги</Phrase>
+    <Phrase key="gpbSearchIn.Text">Искать в</Phrase>
+    <Phrase key="rdbText.Text">Текст</Phrase>
+    <Phrase key="btnCancel.Text">Отменить</Phrase>
+  </Dictionary>
+  <Dictionary key="XmlContentTranslator.Forms.FrmAboutBox">
+    <Phrase key="this">О программе</Phrase>
+    <Phrase key="lblTitle.Text">Переводчик XML-контента</Phrase>
+    <Phrase key="lblVersion.Text">Версия</Phrase>
+    <Phrase key="lblCompany.Text">© 2026 XML Content Translator. Все права защищены.</Phrase>
+    <Phrase key="lblStatus.Text">● Готовность к работе</Phrase>
+    <Phrase key="btnClose.Text">Закрыть</Phrase>
+    <Phrase key="lblLanguageIndicator.Text">EN → RU</Phrase>
+    <Phrase key="lblAuthors.Text">Авторы: niksedk Nikolaj Olsson, JurasskPark Yuriy Pradius</Phrase>
+	<Phrase key="lblDescription">Профессиональный инструмент для подготовки XML-файлов
+
+Возможности:
+• Автоматическое извлечение строк для перевода
+• Сохранение структуры XML-документа
+• Поддержка нескольких языков
+• Интеграция переведенных файлов
+	</Phrase>
+  </Dictionary>
+  <Dictionary key="Application">
+    <Phrase key="ProductName">XML Content Translator 6.0.0.0</Phrase>
+    <Phrase key="Language">Язык: Английский</Phrase>
+    <Phrase key="TitleXMLFiles">XML файлы</Phrase>
+    <Phrase key="FilterXMLFiles">XML файлы (*.xml)|*.xml|Все файлы (*.*)|*.*</Phrase>
+    <Phrase key="TitleDesignerFiles">Файлы конструктора</Phrase>
+    <Phrase key="FilterDesignerFiles">Файлы конструктора (*.Designer.cs)|*.Designer.cs|Все файлы (*.*)|*.*</Phrase>
+  </Dictionary>
+  <Dictionary key="ListView">
+	  <Phrase key="Tag">Тег</Phrase>
+	  <Phrase key="Source">Исходный</Phrase>
+	  <Phrase key="Targer">Целевой</Phrase>
+  </Dictionary>
+  <Dictionary key="Combobox">
+    <Phrase key="All">Все</Phrase>
+  </Dictionary>
+  <Dictionary key="DialogBox">
+    <Phrase key="DeleteRow">Вы уверены, что хотите удалить эту запись?</Phrase>
+    <Phrase key="Error">Ошибка</Phrase>
+    <Phrase key="Warning">Предупреждение</Phrase>
+  </Dictionary>
+  <Dictionary key="Files">
+    <Phrase key="NoDataToSave">Нет данных для сохранения.</Phrase>
+    <Phrase key="FileNotFound">Файл не найден.</Phrase>
+    <Phrase key="NamedFileNotFound">Файл {0} не найден.</Phrase>
+    <Phrase key="DirectoryNotExists">Каталог не существует.</Phrase>
+    <Phrase key="PathNotSupported">Путь не поддерживается.</Phrase>
+    <Phrase key="InvalidFileFormat">Недопустимый формат файла.</Phrase>
+    <Phrase key="LoadConfigError">При загрузке конфигурации произошла ошибка</Phrase>
+    <Phrase key="SaveConfigError">При сохранении конфигурации произошла ошибка</Phrase>
+    <Phrase key="SaveConfigConfirm">Конфигурация была изменена. Сохранить изменения?</Phrase>
+    <Phrase key="LoadViewError">Просмотр загрузки ошибок</Phrase>
+    <Phrase key="SaveViewError">При сохранении представления произошла ошибка</Phrase>
+    <Phrase key="TranslationRequired">Требуется перевод</Phrase>
+  </Dictionary>
+  <Dictionary key="Message">
+    <Phrase key="TranslateSelectedLines">Перевод выделенных строк</Phrase>
+    <Phrase key="LoadedSourceFile">Загружен исходный файл: {0}</Phrase>
+    <Phrase key="LoadedTargetFile">Загружен целевой файл: {0}</Phrase>
+    <Phrase key="SavedTargetFile">Сохранен целевой файл: {0}</Phrase>
+    <Phrase key="SavedTo">Сохранено в {0}</Phrase>
+    <Phrase key="Ready">Готово.</Phrase>
+    <Phrase key="SelectSourceAndTargetLanguages">Выберите исходный и целевой языки.</Phrase>
+    <Phrase key="TranslatingItemsViaService">Перевод {0} элемент(ов) через {1}...</Phrase>
+    <Phrase key="TranslatedItemsViaService">Переведено {0} элемент(ов) через {1}.</Phrase>
+    <Phrase key="TranslatedItems">Переведено {0} элемент(ов).</Phrase>
+    <Phrase key="TranslationFailed">Ошибка перевода.</Phrase>
+    <Phrase key="XmlContentTranslatorFileTitle">XML Content Translator - {0}</Phrase>
+    <Phrase key="UnsavedTargetTextWillBeLost">Несохраненный целевой текст будет потерян. Продолжить?</Phrase>
+    <Phrase key="ItemsSelected">Выбрано элементов: {0}</Phrase>
+    <Phrase key="CopiedItemsFromSource">Скопировано {0} элемент(ов) из исходного текста.</Phrase>
+    <Phrase key="OpenSourceXmlFile">Открыть исходный XML-файл</Phrase>
+    <Phrase key="SaveTranslatedXmlFile">Сохранить переведенный XML-файл</Phrase>
+    <Phrase key="OnlyOneXmlFileUpToMbIsSupported">Поддерживается только один XML-файл размером до {0} МБ.</Phrase>
+  </Dictionary>
+</XmlContentTranslatorDictionaries>

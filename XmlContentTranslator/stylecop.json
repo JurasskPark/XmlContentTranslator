@@ -1,0 +1,15 @@
+{
+  "settings": {
+    "documentationRules": {
+      "companyName": "",
+      "copyrightText": "",
+      "documentInterfaces": false,
+      "documentInternalElements": false,
+      "documentPrivateElements": false,
+      "documentExposedElements": false
+    },
+    "orderingRules": {
+      "usingDirectivesPlacement": "outsideNamespace"
+    }
+  }
+}

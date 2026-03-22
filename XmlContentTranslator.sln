@@ -1,0 +1,65 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35617.110
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlContentTranslator", "XmlContentTranslator\XmlContentTranslator.csproj", "{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "File.Shared", "Shared\File.Shared\File.Shared.shproj", "{D40AEDF6-E581-4EC9-9530-1F80EFC528E4}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Debuger.Shared", "Shared\Debuger.Shared\Debuger.Shared.shproj", "{D96D838C-4EC3-1500-3B6F-094253DC304F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Manager.Shared", "Shared\Manager.Shared\Manager.Shared.shproj", "{BAB85E98-D112-9A50-B28C-91475C51D3C6}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Assistant.Shared", "Shared\Utils.Shared\Assistant.Shared.shproj", "{F458D05B-015D-4515-AE01-56CD17DA693E}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Xml.Shared", "Shared\Xml.Shared\Xml.Shared.shproj", "{ABD4A39A-9511-4E0C-B213-A915E917F549}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Language.Shared", "Shared\language.Shared\Language.Shared.shproj", "{D4CBF74A-853E-45EC-907C-443D0609C1A8}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Project.Shared", "Shared\Project.Shared\Project.Shared.shproj", "{230B5823-A005-45D7-8DE2-F772E880F389}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D40AEDF6-E581-4EC9-9530-1F80EFC528E4} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{D96D838C-4EC3-1500-3B6F-094253DC304F} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{BAB85E98-D112-9A50-B28C-91475C51D3C6} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{F458D05B-015D-4515-AE01-56CD17DA693E} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{ABD4A39A-9511-4E0C-B213-A915E917F549} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{D4CBF74A-853E-45EC-907C-443D0609C1A8} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{230B5823-A005-45D7-8DE2-F772E880F389} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3B9A219-180B-4365-AA88-B2791D47ED45}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared\Project.Shared\Project.Shared.projitems*{230b5823-a005-45d7-8de2-f772e880f389}*SharedItemsImports = 13
+		Shared\Debuger.Shared\Debuger.Shared.projitems*{33a7291a-1ef3-83d2-d9d0-ad255932c7c5}*SharedItemsImports = 5
+		Shared\File.Shared\File.Shared.projitems*{33a7291a-1ef3-83d2-d9d0-ad255932c7c5}*SharedItemsImports = 5
+		Shared\language.Shared\language.Shared.projitems*{33a7291a-1ef3-83d2-d9d0-ad255932c7c5}*SharedItemsImports = 5
+		Shared\Manager.Shared\Manager.Shared.projitems*{33a7291a-1ef3-83d2-d9d0-ad255932c7c5}*SharedItemsImports = 5
+		Shared\Project.Shared\Project.Shared.projitems*{33a7291a-1ef3-83d2-d9d0-ad255932c7c5}*SharedItemsImports = 5
+		Shared\Utils.Shared\Utils.Shared.projitems*{33a7291a-1ef3-83d2-d9d0-ad255932c7c5}*SharedItemsImports = 5
+		Shared\Xml.Shared\Xml.Shared.projitems*{33a7291a-1ef3-83d2-d9d0-ad255932c7c5}*SharedItemsImports = 5
+		Shared\Xml.Shared\Xml.Shared.projitems*{abd4a39a-9511-4e0c-b213-a915e917f549}*SharedItemsImports = 13
+		Shared\Manager.Shared\Manager.Shared.projitems*{bab85e98-d112-9a50-b28c-91475c51d3c6}*SharedItemsImports = 13
+		Shared\File.Shared\File.Shared.projitems*{d40aedf6-e581-4ec9-9530-1f80efc528e4}*SharedItemsImports = 13
+		Shared\language.Shared\language.Shared.projitems*{d4cbf74a-853e-45ec-907c-443d0609c1a8}*SharedItemsImports = 13
+		Shared\Debuger.Shared\Debuger.Shared.projitems*{d96d838c-4ec3-1500-3b6f-094253dc304f}*SharedItemsImports = 13
+		Shared\Utils.Shared\Utils.Shared.projitems*{f458d05b-015d-4515-ae01-56cd17da693e}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal
