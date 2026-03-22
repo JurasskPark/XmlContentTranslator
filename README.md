@@ -63,13 +63,13 @@ Working with XML localization files is usually fragmented across editors, script
 
 Main translation workspace:
 
-![Main window](Source/screen_003.png)
+![Main window](https://raw.githubusercontent.com/JurasskPark/XmlContentTranslator/refs/heads/RapidScadav5/Source/screen_003.png)
 
 Auxiliary workflow window:
 
-![Additional window](Source/screen_001.png)
-![Additional window](Source/screen_002.png)
-![Additional window](Source/screen_004.png)
+![Additional window](https://raw.githubusercontent.com/JurasskPark/XmlContentTranslator/refs/heads/RapidScadav5/Source/screen_001.png)
+![Additional window](https://raw.githubusercontent.com/JurasskPark/XmlContentTranslator/refs/heads/RapidScadav5/Source/screen_002.png)
+![Additional window](https://raw.githubusercontent.com/JurasskPark/XmlContentTranslator/refs/heads/RapidScadav5/Source/screen_004.png)
 
 ### Translation Services
 
@@ -199,13 +199,13 @@ dotnet run --project .\XmlContentTranslator\XmlContentTranslator.csproj
 
 Основное окно перевода:
 
-![Основное окно](Source/screen_003.png)
+![Основное окно](https://raw.githubusercontent.com/JurasskPark/XmlContentTranslator/refs/heads/RapidScadav5/Source/screen_003.png)
 
 Дополнительное окно:
 
-![Дополнительное окно](Source/screen_001.png)
-![Дополнительное окно](Source/screen_002.png)
-![Дополнительное окно](Source/screen_004.png)
+![Дополнительное окно](https://raw.githubusercontent.com/JurasskPark/XmlContentTranslator/refs/heads/RapidScadav5/Source/screen_001.png)
+![Дополнительное окно](https://raw.githubusercontent.com/JurasskPark/XmlContentTranslator/refs/heads/RapidScadav5/Source/screen_002.png)
+![Дополнительное окно](https://raw.githubusercontent.com/JurasskPark/XmlContentTranslator/refs/heads/RapidScadav5/Source/screen_004.png)
 
 ### Сервисы перевода
 
