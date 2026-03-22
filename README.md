@@ -4,6 +4,7 @@
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)
 ![UI](https://img.shields.io/badge/UI-WinForms-0A7E07)
 ![Languages](https://img.shields.io/badge/README-English%20%7C%20Русский-orange)
+![XmlContentTranslator](https://img.shields.io/github/downloads/JurasskPark/XmlContentTranslator/XmlContentTranslator_v1.0.0.0/total)
 
 English | [Русский](#русский)
 
