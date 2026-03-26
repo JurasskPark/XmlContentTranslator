@@ -49,8 +49,8 @@ namespace XmlContentTranslator.Forms
             animationTimer.Tick += AnimationTimer_Tick;
             Paint += AboutForm_Paint;
 
-            LoadAssemblyInfo();
             Translate();
+            LoadAssemblyInfo();
         }
 
         /// <summary>

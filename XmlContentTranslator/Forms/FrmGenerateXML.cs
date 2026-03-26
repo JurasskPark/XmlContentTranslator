@@ -43,6 +43,17 @@ namespace XmlContentTranslator.Forms
 
         #region Control
 
+        #region Translate
+        /// <summary>
+        /// Translates the shell form.
+        /// <para>Переводит форму оболочки.</para>
+        /// </summary>
+        private void Translate()
+        {
+            FormTranslator.Translate(this, GetType().FullName);
+        }
+        #endregion Translate
+
         #region Menu
 
         #region Import From File
@@ -219,15 +230,6 @@ namespace XmlContentTranslator.Forms
 
         #region Basic
         /// <summary>
-        /// Translates the shell form.
-        /// <para>Переводит форму оболочки.</para>
-        /// </summary>
-        private void Translate()
-        {
-            FormTranslator.Translate(this, GetType().FullName);
-        }
-
-        /// <summary>
         /// The process of preparing and processing files.
         /// <para>Процесс подготовки и обработки файлов.</para>
         /// </summary>
@@ -272,7 +274,7 @@ namespace XmlContentTranslator.Forms
 
                 if (!namespaceMatch.Success || !classMatch.Success)
                 {
-                    return new FormAnalysisResult();
+                    return null;
                 }
 
                 var namespaceName = namespaceMatch.Groups[1].Value.Trim();
@@ -376,7 +378,7 @@ namespace XmlContentTranslator.Forms
 
                 // extract comboBox items
                 var comboBoxMatches = Regex.Matches(content,
-                    @"this\.(?<controlName>\w+ComboBox)\.[\s\w]*?(?<items>Items\.AddRange\(new object\[\] \{.*?\}\))",
+                    @"this\.(?<controlName>\w+)\.[\s\w]*?(?<items>Items\.AddRange\(new object\[\] \{.*?\}\))",
                     RegexOptions.Singleline);
 
                 foreach (Match match in comboBoxMatches)
@@ -404,7 +406,139 @@ namespace XmlContentTranslator.Forms
                     }
                 }
 
-                AddColumnProperties(content, result);
+                // extract listView column headers
+                var listViewColumnMatches = Regex.Matches(content,
+                    @"this\.(?<controlName>\w+)\.[\s\w]*?Columns\.AddRange\(new (?:ColumnHeader\[\]|\[\]) \{(.*?)\}\)",
+                    RegexOptions.Singleline);
+
+                foreach (Match match in listViewColumnMatches)
+                {
+                    var controlName = match.Groups["controlName"].Value;
+                    var columnsContent = match.Groups[2].Value;
+
+                    // parse individual column headers
+                    var columnMatches = Regex.Matches(columnsContent,
+                        @"new System\.Windows\.Forms\.ColumnHeader\s*\{\s*Text\s*=\s*""(?<text>[^""]+)""",
+                        RegexOptions.Singleline);
+
+                    int columnIndex = 0;
+                    foreach (Match columnMatch in columnMatches)
+                    {
+                        var columnText = columnMatch.Groups["text"].Value;
+                        if (!string.IsNullOrWhiteSpace(columnText))
+                        {
+                            result.Properties.Add(new PropertyInfo
+                            {
+                                ControlName = controlName,
+                                PropertyName = $"Columns[{columnIndex}].Text",
+                                Value = columnText
+                            });
+                            columnIndex++;
+                        }
+                    }
+                }
+
+                // alternative format for simple ListView column initialization
+                var simpleColumnMatches = Regex.Matches(content,
+                    @"this\.(?<controlName>\w+)\.Columns\.Add\(""(?<text>[^""]+)"",.*?\)",
+                    RegexOptions.Multiline);
+
+                foreach (Match match in simpleColumnMatches)
+                {
+                    var controlName = match.Groups["controlName"].Value;
+                    var columnText = match.Groups["text"].Value;
+
+                    if (!string.IsNullOrWhiteSpace(columnText))
+                    {
+                        result.Properties.Add(new PropertyInfo
+                        {
+                            ControlName = controlName,
+                            PropertyName = "Column",
+                            Value = columnText
+                        });
+                    }
+                }
+
+                // extract dataGridView column headers
+                var dataGridViewColumnMatches = Regex.Matches(content,
+                    @"this\.(?<controlName>\w+)\.[\s\w]*?Columns\.AddRange\(new (?:DataGridViewColumn\[\]|\[\]) \{(.*?)\}\)",
+                    RegexOptions.Singleline);
+
+                foreach (Match match in dataGridViewColumnMatches)
+                {
+                    var controlName = match.Groups["controlName"].Value;
+                    var columnsContent = match.Groups[2].Value;
+
+                    // parse dataGridView columns - various possible formats
+                    var columnMatches = Regex.Matches(columnsContent,
+                        @"new System\.Windows\.Forms\.DataGridView(?:TextBox|Button|ComboBox|CheckBox|Image|Link)Column\s*\{\s*HeaderText\s*=\s*""(?<header>[^""]+)""",
+                        RegexOptions.Singleline);
+
+                    int columnIndex = 0;
+                    foreach (Match columnMatch in columnMatches)
+                    {
+                        var headerText = columnMatch.Groups["header"].Value;
+                        if (!string.IsNullOrWhiteSpace(headerText))
+                        {
+                            result.Properties.Add(new PropertyInfo
+                            {
+                                ControlName = controlName,
+                                PropertyName = $"Columns[{columnIndex}].HeaderText",
+                                Value = headerText
+                            });
+                            columnIndex++;
+                        }
+                    }
+                }
+
+                // alternative format for individual column addition
+                var individualColumnMatches = Regex.Matches(content,
+                    @"this\.(?<controlName>\w+)\.Columns\[(?:\d+|""[^""]+"")\]\s*\.\s*HeaderText\s*=\s*""(?<header>[^""]+)"";",
+                    RegexOptions.Multiline);
+
+                foreach (Match match in individualColumnMatches)
+                {
+                    var controlName = match.Groups["controlName"].Value;
+                    var headerText = match.Groups["header"].Value;
+
+                    if (!string.IsNullOrWhiteSpace(headerText))
+                    {
+                        result.Properties.Add(new PropertyInfo
+                        {
+                            ControlName = controlName,
+                            PropertyName = "ColumnHeader",
+                            Value = headerText
+                        });
+                    }
+                }
+
+                // also catch datagridviewcolumn creation with headertext
+                var columnCreationMatches = Regex.Matches(content,
+                    @"DataGridView(?:TextBox|Button|ComboBox|CheckBox|Image|Link)Column\s+(?<columnVar>\w+)\s*=\s*new[\s\S]*?HeaderText\s*=\s*""(?<header>[^""]+)""",
+                    RegexOptions.Singleline);
+
+                foreach (Match match in columnCreationMatches)
+                {
+                    // find which DataGridView this column is added to
+                    var columnVar = match.Groups["columnVar"].Value;
+                    var headerText = match.Groups["header"].Value;
+
+                    // look for where this column is added to a datagridview
+                    var addMatch = Regex.Match(content,
+                        $@"this\.(?<controlName>\w+)\.Columns\.AddRange.*?{columnVar}",
+                        RegexOptions.Singleline);
+
+                    if (addMatch.Success && !string.IsNullOrWhiteSpace(headerText))
+                    {
+                        var controlName = addMatch.Groups["controlName"].Value;
+                        result.Properties.Add(new PropertyInfo
+                        {
+                            ControlName = controlName,
+                            PropertyName = "Column",
+                            Value = headerText
+                        });
+                    }
+                }
 
                 // menu
                 ExtractMenuItems(content, result);
@@ -414,54 +548,7 @@ namespace XmlContentTranslator.Forms
             catch (Exception ex)
             {
                 ShowExceptionMessage(ex);
-                return new FormAnalysisResult();
-            }
-        }
-
-        /// <summary>
-        /// Add Column Properties.
-        /// <para>Добавление столбца с параметрами.</para>>
-        /// </summary>
-        private static void AddColumnProperties(string content, FormAnalysisResult result)
-        {
-            var analysis = DesignerColumnsAnalyzer.Analyze(content);
-
-            foreach (var pair in analysis.ListViewHeaderTexts)
-            {
-                for (int i = 0; i < pair.Value.Count; i++)
-                {
-                    var header = pair.Value[i];
-                    if (string.IsNullOrWhiteSpace(header))
-                    {
-                        continue;
-                    }
-
-                    result.Properties.Add(new PropertyInfo
-                    {
-                        ControlName = pair.Key,
-                        PropertyName = $"Columns[{i}].Text",
-                        Value = header
-                    });
-                }
-            }
-
-            foreach (var pair in analysis.DataGridViewHeaderTexts)
-            {
-                for (int i = 0; i < pair.Value.Count; i++)
-                {
-                    var header = pair.Value[i];
-                    if (string.IsNullOrWhiteSpace(header))
-                    {
-                        continue;
-                    }
-
-                    result.Properties.Add(new PropertyInfo
-                    {
-                        ControlName = pair.Key,
-                        PropertyName = $"Columns[{i}].HeaderText",
-                        Value = header
-                    });
-                }
+                return null;
             }
         }
 
@@ -476,7 +563,7 @@ namespace XmlContentTranslator.Forms
                 "GroupBox", "Panel", "ListBox", "ComboBox", "ListView",
                 "TreeView", "DataGridView", "PictureBox", "RichTextBox",
                 "DateTimePicker", "MonthCalendar", "MaskedTextBox",
-                "NumericUpDown", "ProgressBar", "TrackBar"
+                "NumericUpDown", "ProgressBar", "TrackBar", "TabControl", "TabPage"
             };
             return controlTypes.Contains(typeName);
         }
@@ -492,7 +579,7 @@ namespace XmlContentTranslator.Forms
                 var menuStrips = new Dictionary<string, string>();
 
                 var menuStripDeclarations = Regex.Matches(content,
-                    @"private\s+(?:System\.Windows\.Forms\.)?(?<type>MenuStrip|ContextMenuStrip|ToolStrip)\s+(?<name>\w+);",
+                    @"private\s+(?:System\.Windows\.Forms\.)?(?<type>MenuStrip|ContextMenuStrip)\s+(?<name>\w+);",
                     RegexOptions.Multiline);
 
                 foreach (Match match in menuStripDeclarations)
@@ -503,13 +590,13 @@ namespace XmlContentTranslator.Forms
                 foreach (var menuStrip in menuStrips.Keys)
                 {
                     var itemsMatch = Regex.Match(content,
-                        $@"{OptionalThisPattern}{menuStrip}\.Items\.AddRange\(new {ToolStripItemArrayPattern}\s*\{{\s*(?<items>.*?)\s*\}}\);",
+                        $@"this\.{menuStrip}\.Items\.AddRange\(new System\.Windows\.Forms\.ToolStripItem\[\]\s*{{\s*(?<items>.*?)\s*}}\);",
                         RegexOptions.Singleline);
 
                     if (itemsMatch.Success)
                     {
                         var itemsContent = itemsMatch.Groups["items"].Value;
-                        var itemNameMatches = Regex.Matches(itemsContent, $@"{OptionalThisPattern}(?<itemName>\w+)");
+                        var itemNameMatches = Regex.Matches(itemsContent, @"this\.(?<itemName>\w+)");
 
                         foreach (Match itemMatch in itemNameMatches)
                         {
@@ -521,7 +608,7 @@ namespace XmlContentTranslator.Forms
 
                 var menuItemDeclarations = new HashSet<string>();
                 var declarationMatches = Regex.Matches(content,
-                    @"private\s+(?:System\.Windows\.Forms\.)?(?:ToolStripMenuItem|ToolStripDropDownButton)\s+(?<itemName>\w+);",
+                    @"private\s+(?:System\.Windows\.Forms\.)?ToolStripMenuItem\s+(?<itemName>\w+);",
                     RegexOptions.Multiline);
 
                 foreach (Match match in declarationMatches)
@@ -570,10 +657,6 @@ namespace XmlContentTranslator.Forms
             }
         }
 
-        /// <summary>
-        /// Extracting properties of menu items.
-        /// <para>Извлечение свойств элементов меню.</para>
-        /// </summary>
         private void ExtractMenuItemProperties(string content, string itemName, FormAnalysisResult result)
         {
             var textMatch = Regex.Match(content,
@@ -623,20 +706,16 @@ namespace XmlContentTranslator.Forms
             }
         }
 
-        /// <summary>
-        /// Find for nested menu items.
-        /// <para>Поиск вложенных пунктов меню.</para>
-        /// </summary>
         private void FindNestedMenuItems(string content, string parentItemName, FormAnalysisResult result)
         {
             var dropDownMatch = Regex.Match(content,
-                $@"{OptionalThisPattern}{parentItemName}\.DropDownItems\.AddRange\(new {ToolStripItemArrayPattern}\s*\{{\s*(?<items>.*?)\s*\}}\);",
+                $@"{parentItemName}\.DropDownItems\.AddRange\(new System\.Windows\.Forms\.ToolStripItem\[\]\s*{{\s*(?<items>.*?)\s*}}\);",
                 RegexOptions.Singleline);
 
             if (dropDownMatch.Success)
             {
                 var itemsContent = dropDownMatch.Groups["items"].Value;
-                var itemNameMatches = Regex.Matches(itemsContent, $@"{OptionalThisPattern}(?<itemName>\w+)");
+                var itemNameMatches = Regex.Matches(itemsContent, @"this\.(?<itemName>\w+)");
 
                 foreach (Match itemMatch in itemNameMatches)
                 {
@@ -648,14 +727,11 @@ namespace XmlContentTranslator.Forms
             }
         }
 
-        /// <summary>
-        /// Find the menu by the name template.
-        /// <para>Поиск меню по шаблону названия.</para>
-        /// </summary>
+
         private bool IsLikelyMenuItem(string itemName, string content)
         {
             var declarationMatch = Regex.IsMatch(content,
-                $@"private\s+(?:System\.Windows\.Forms\.)?(?:ToolStripMenuItem|ToolStripDropDownButton)\s+{itemName};",
+                $@"private\s+(?:System\.Windows\.Forms\.)?ToolStripMenuItem\s+{itemName};",
                 RegexOptions.Multiline);
 
             if (declarationMatch)
@@ -741,13 +817,13 @@ namespace XmlContentTranslator.Forms
 
                 // search for nested submenus
                 var dropDownItemsMatch = Regex.Match(content,
-                    $@"{OptionalThisPattern}{itemName}\.DropDownItems\.AddRange\(new {ToolStripItemArrayPattern}\s*\{{\s*(?<items>.*?)\s*\}}\);",
+                    $@"this\.{itemName}\.DropDownItems\.AddRange\(new System\.Windows\.Forms\.ToolStripItem\[\]\s*{{\s*(?<items>.*?)\s*}}\);",
                     RegexOptions.Singleline);
 
                 if (dropDownItemsMatch.Success)
                 {
                     var subItemsContent = dropDownItemsMatch.Groups["items"].Value;
-                    var subItemMatches = Regex.Matches(subItemsContent, $@"{OptionalThisPattern}(?<subItemName>\w+)");
+                    var subItemMatches = Regex.Matches(subItemsContent, @"this\.(?<subItemName>\w+)");
 
                     foreach (Match subItemMatch in subItemMatches)
                     {
@@ -803,7 +879,7 @@ namespace XmlContentTranslator.Forms
                 "RadioButton", "LinkLabel", "GroupBox", "ListView",
                 "TreeView", "DataGridView", "ComboBox",
                 "RichTextBox", "ListBox", "CheckedListBox",
-                "DateTimePicker", "MonthCalendar", "MaskedTextBox"
+                "DateTimePicker", "MonthCalendar", "MaskedTextBox", "TabControl", "TabPage"
             };
             return textControlTypes.Contains(controlType);
         }
@@ -824,13 +900,11 @@ namespace XmlContentTranslator.Forms
                       name.StartsWith("rdb") ||
                       name.StartsWith("grp") ||
                       name.StartsWith("gpb") ||
-                      name.StartsWith("lnk");
+                      name.StartsWith("lnk") ||
+                      name.StartsWith("tab") ||
+                      name.StartsWith("dgv");
         }
 
-        /// <summary>
-        /// Generating an XML file from the search results.
-        /// <para>Генерация из результатов нахождения XML файла.</para>
-        /// </summary>
         private void GenerateXml(List<FormAnalysisResult> results)
         {
             try

@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Projects\\GitHub\\XmlContentTranslator\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}|XmlContentTranslator\\XmlContentTranslator.csproj|c:\\projects\\github\\xmlcontenttranslator\\xmlcontenttranslator\\forms\\frmaboutbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}|XmlContentTranslator\\XmlContentTranslator.csproj|solutionrelative:xmlcontenttranslator\\forms\\frmaboutbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F458D05B-015D-4515-AE01-56CD17DA693E}|Shared\\Utils.Shared\\Assistant.Shared.shproj|c:\\projects\\github\\xmlcontenttranslator\\shared\\utils.shared\\utils\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F458D05B-015D-4515-AE01-56CD17DA693E}|Shared\\Utils.Shared\\Assistant.Shared.shproj|solutionrelative:shared\\utils.shared\\utils\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}|XmlContentTranslator\\XmlContentTranslator.csproj|c:\\projects\\github\\xmlcontenttranslator\\xmlcontenttranslator\\xmlcontenttranslator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}|XmlContentTranslator\\XmlContentTranslator.csproj|solutionrelative:xmlcontenttranslator\\xmlcontenttranslator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}|XmlContentTranslator\\XmlContentTranslator.csproj|c:\\projects\\github\\xmlcontenttranslator\\xmlcontenttranslator\\forms\\frmgeneratexml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}|XmlContentTranslator\\XmlContentTranslator.csproj|solutionrelative:xmlcontenttranslator\\forms\\frmgeneratexml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}|XmlContentTranslator\\XmlContentTranslator.csproj|C:\\Projects\\GitHub\\XmlContentTranslator\\xmlcontenttranslator\\forms\\frmstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{33A7291A-1EF3-83D2-D9D0-AD255932C7C5}|XmlContentTranslator\\XmlContentTranslator.csproj|solutionrelative:xmlcontenttranslator\\forms\\frmstart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,6 +51,69 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmAboutBox.cs",
+              "DocumentMoniker": "C:\\Projects\\GitHub\\XmlContentTranslator\\XmlContentTranslator\\Forms\\FrmAboutBox.cs",
+              "RelativeDocumentMoniker": "XmlContentTranslator\\Forms\\FrmAboutBox.cs",
+              "ToolTip": "C:\\Projects\\GitHub\\XmlContentTranslator\\XmlContentTranslator\\Forms\\FrmAboutBox.cs",
+              "RelativeToolTip": "XmlContentTranslator\\Forms\\FrmAboutBox.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T16:16:19.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Utils.cs",
+              "DocumentMoniker": "C:\\Projects\\GitHub\\XmlContentTranslator\\Shared\\Utils.Shared\\Utils\\Utils.cs",
+              "RelativeDocumentMoniker": "Shared\\Utils.Shared\\Utils\\Utils.cs",
+              "ToolTip": "C:\\Projects\\GitHub\\XmlContentTranslator\\Shared\\Utils.Shared\\Utils\\Utils.cs",
+              "RelativeToolTip": "Shared\\Utils.Shared\\Utils\\Utils.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T16:15:12.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "XmlContentTranslator",
+              "DocumentMoniker": "C:\\Projects\\GitHub\\XmlContentTranslator\\XmlContentTranslator\\XmlContentTranslator.csproj",
+              "RelativeDocumentMoniker": "XmlContentTranslator\\XmlContentTranslator.csproj",
+              "ToolTip": "C:\\Projects\\GitHub\\XmlContentTranslator\\XmlContentTranslator\\XmlContentTranslator.csproj",
+              "RelativeToolTip": "XmlContentTranslator\\XmlContentTranslator.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-26T16:14:57.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmGenerateXML.cs",
+              "DocumentMoniker": "C:\\Projects\\GitHub\\XmlContentTranslator\\XmlContentTranslator\\Forms\\FrmGenerateXML.cs",
+              "RelativeDocumentMoniker": "XmlContentTranslator\\Forms\\FrmGenerateXML.cs",
+              "ToolTip": "C:\\Projects\\GitHub\\XmlContentTranslator\\XmlContentTranslator\\Forms\\FrmGenerateXML.cs",
+              "RelativeToolTip": "XmlContentTranslator\\Forms\\FrmGenerateXML.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALsDAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T16:08:56.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmStart.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Projects\\GitHub\\XmlContentTranslator\\XmlContentTranslator\\Forms\\FrmStart.cs",
+              "RelativeDocumentMoniker": "XmlContentTranslator\\Forms\\FrmStart.cs",
+              "ToolTip": "C:\\Projects\\GitHub\\XmlContentTranslator\\XmlContentTranslator\\Forms\\FrmStart.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "XmlContentTranslator\\Forms\\FrmStart.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T16:08:43.474Z"
             }
           ]
         }

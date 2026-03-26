@@ -14,7 +14,7 @@
 	  <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
     <ApplicationIcon>Source\icon\xml_exports.ico</ApplicationIcon>
     <UserSecretsId>3b10bb3a-5ae3-48a8-9c47-1305782e3a79</UserSecretsId>
-	  <Version>1.0.0.1</Version>
+	  <Version>1.0.0.2</Version>
 	  <Authors>niksedk Nikolaj Olsson, JurasskPark Yuriy Pradius</Authors>
 	  <Company>Community Rapid Software</Company>
 	  <Product>XmlContentTranslator</Product>
